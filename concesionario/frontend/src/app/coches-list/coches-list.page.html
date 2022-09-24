@@ -13,17 +13,26 @@
 
   
   <ion-list>
-    <ion-item *ngFor="let c of coches">
+    <ion-item *ngFor="let coche of coches">
       <ion-label>
         <ion-card>
           <ion-card-header>
 
-            <ion-card-title>Marca: {{c.marca}}</ion-card-title>
-            <ion-card-subtitle>Modelo: {{c.modelo}}</ion-card-subtitle>
-            <p>Matricula: {{c.matricula}}</p>
+            <ion-card-title>Marca: {{coche.marca}}</ion-card-title>
+            <ion-card-subtitle>Modelo: {{coche.modelo}}</ion-card-subtitle>
+            <p>Matricula: {{coche.matricula}}</p>
 
           </ion-card-header>
           <ion-card-content>
+
+            <div>
+              <button ion-button clear [routerLink]="['/coches-update/', coche.id]">
+                <ion-icon name="create" style="zoom:1.5"></ion-icon>
+              </button>
+              <button ion-button clear (click)="removeCoche(coche)">
+                <ion-icon name="trash" style="zoom:1.5"></ion-icon>
+              </button>
+            </div>
 
           </ion-card-content>
         </ion-card> 

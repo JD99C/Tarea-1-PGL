@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'coches-create',
     loadChildren: () => import('./coches-create/coches-create.module').then( m => m.CochesCreatePageModule)
   },
+  {
+    path: 'coches-update/:id',
+    loadChildren: () => import('./coches-update/coches-update.module').then( m => m.CochesUpdatePageModule)
+  },
 ];
 
 @NgModule({

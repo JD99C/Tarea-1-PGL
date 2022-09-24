@@ -26,7 +26,7 @@ export class CocheService {
 
   constructor(private httpClient: HttpClient) { }
 
-  //Get Coches
+  //Gets Todos los Coches
   getCoches(){
     return this.httpClient.get(this.endpoint);
   }
@@ -36,7 +36,33 @@ export class CocheService {
       catchError(this.handleError<Coche>('Error occured'))
     );
   }
-  
+
+  //Get Un solo Coche
+  getCoche(id): Observable<Coche[]> {
+    return this.httpClient.get<Coche[]>(this.endpoint + '/' + id)
+      .pipe(
+        tap(_ => console.log(`Coche fetched: ${id}`)),
+        catchError(this.handleError<Coche[]>(`Get coche id=${id}`))
+      );
+  }
+
+  //Update Coche
+  updateCoche(id, coche: Coche): Observable<any> {
+    return this.httpClient.put(this.endpoint + '/' + id, JSON.stringify(coche), this.httpOptions).pipe(
+        tap(_ => console.log(`Coche updated: ${id}`)),
+        catchError(this.handleError<Coche[]>('Update coche'))
+      );
+  }
+
+  //Delete Cooche
+  deleteCoche(id): Observable<Coche[]> {
+    return this.httpClient.delete<Coche[]>(this.endpoint + '/' + id, this.httpOptions)
+      .pipe(
+        tap(_ => console.log(`User deleted: ${id}`)),
+        catchError(this.handleError<Coche[]>('Delete user'))
+      );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
@@ -44,7 +70,4 @@ export class CocheService {
       return of(result as T);
     };
   }  
-
-
-
 }
