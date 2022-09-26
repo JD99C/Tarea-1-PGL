@@ -7,7 +7,7 @@ exports.create = (req,res) => {
     //Validad peticion
     if(!req.body.marca){
         res.status(400).send({
-            message: "Content can not be empty!"
+            message: "El contenido no puede estar vacio"
         });
         return;
     }
@@ -27,7 +27,7 @@ exports.create = (req,res) => {
         .catch(err => {
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while creating the Coche."
+                    err.message || "Ocurrio algun error al crear los datos"
             });
         });
 };
@@ -41,7 +41,7 @@ exports.findAll = (req, res) => {
         .catch(err => {
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while retrieving Coches."
+                    err.message || "Algun error ocurrio al cargar los datos"
             });
         });
 };
@@ -56,13 +56,13 @@ exports.findOne = (req, res) => {
           res.send(data);
         } else {
           res.status(404).send({
-            message: `Cannot find Coche with id=${id}.`
+            message: `No se puede encontrar el dato con id=${id}.`
           });
         }
       })
       .catch(err => {
         res.status(500).send({
-          message: "Error retrieving Coche with id=" + id
+          message: "Error al cargar dato con id=" + id
         });
       });
 
@@ -74,4 +74,26 @@ exports.update = (req, res) =>{
 
 //Delete a Coche with the specified Matricula(ID) in the request
 exports.delete = (req, res) => {
+
+  const id = req.params.id;
+
+  Coches.destroy({
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Dato eliminado correctamente"
+        });
+      } else {
+        res.send({
+          message: `No se puede eliminar el dato con id=${id}. Quizas el dato no exista!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "No se puede borrar el dato con id=" + id
+      });
+    });
 };

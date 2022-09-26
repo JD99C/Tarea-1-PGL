@@ -36,6 +36,14 @@ export class CocheService {
       catchError(this.handleError<Coche>('Error occured'))
     );
   }
+
+  deleteCoche(id): Observable<Coche[]> {
+    return this.httpClient.delete<Coche[]>(this.endpoint + '/' + id, this.httpOptions)
+      .pipe(
+        tap(_ => console.log(`Dato eliminado: ${id}`)),
+        catchError(this.handleError<Coche[]>('Dato eliminado'))
+      );
+  }
   
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
+import { AlertController, MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import {Router} from '@angular/router';
 })
 export class HomePage {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public alertController: AlertController) {}
 
   gotoCoches(){
     this.router.navigateByUrl("/coches-list")
@@ -17,5 +18,25 @@ export class HomePage {
   gotoCreateCoches(){
     this.router.navigateByUrl("/coches-create")
   }
+
+
+
+//Alerta de ayuda
+
+async presentAlert() {
+  const alert = await this.alertController.create({
+    header: 'Alert',
+    subHeader: 'Subtitle',
+    message: 'This is an alert message.',
+    buttons: ['OK']
+  });
+
+  await alert.present();
+}
+
+
+
+
+
 
 }
