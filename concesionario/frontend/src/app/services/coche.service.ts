@@ -37,6 +37,23 @@ export class CocheService {
     );
   }
 
+  updateCoche(id, coche: Coche): Observable<any> {
+    return this.httpClient.put(this.endpoint + '/' + id, JSON.stringify(coche), this.httpOptions)
+      .pipe(
+        tap(_ => console.log(`User updated: ${id}`)),
+        catchError(this.handleError<Coche[]>('Update user'))
+      );
+  }
+
+  getCoche(id): Observable<Coche[]> {
+    return this.httpClient.get<Coche[]>(this.endpoint + '/' + id)
+      .pipe(
+        tap(_ => console.log(`User fetched: ${id}`)),
+        catchError(this.handleError<Coche[]>(`Get user id=${id}`))
+      );
+  }
+
+  //Delete Coche
   deleteCoche(id): Observable<Coche[]> {
     return this.httpClient.delete<Coche[]>(this.endpoint + '/' + id, this.httpOptions)
       .pipe(

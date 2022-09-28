@@ -18,7 +18,7 @@ const routes: Routes = [
   {
     path: 'coches-create',
     loadChildren: () => import('./coches-create/coches-create.module').then( m => m.CochesCreatePageModule)
-  },
+  }
 ];
 
 @NgModule({

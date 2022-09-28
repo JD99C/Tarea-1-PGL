@@ -17,6 +17,12 @@ export class CochesListPage implements OnInit {
     this.getAllCoches();
   }
 
+  ionViewDidEnter() {
+    this.cocheService.getCoches().subscribe((response) => {
+      this.coches = response;
+    })
+  }
+
   getAllCoches(){
     this.cocheService.getCoches().subscribe(response => {
       this.coches = response;
@@ -28,11 +34,13 @@ export class CochesListPage implements OnInit {
     if (window.confirm('¿Estas seguro de eliminar?')) {
       this.cocheService.deleteCoche(coche.id)
       .subscribe(() => {
+          this.ionViewDidEnter();
           this.getAllCoches();
           console.log('Dato eliminado!')
         }
       )
     }
   }
+
 
 }
