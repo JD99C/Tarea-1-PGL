@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import {Router} from '@angular/router';
 import { AlertController, MenuController } from '@ionic/angular';
 
@@ -9,7 +9,7 @@ import { AlertController, MenuController } from '@ionic/angular';
 })
 export class HomePage {
 
-  constructor(private router: Router, private alertController: AlertController) {}
+  constructor(private alertController: AlertController, private router: Router) {}
 
   gotoCoches(){
     this.router.navigateByUrl("/coches-list")
@@ -19,18 +19,5 @@ export class HomePage {
     this.router.navigateByUrl("/coches-create")
   }
 
-
-
-//Alerta de ayuda
-
-async presentAlert() {
-  const alert = await this.alertController.create({
-    header: 'Alert',
-    subHeader: 'Important message',
-    message: 'This is an alert!',
-    buttons: ['OK'],
-  });
-
-  await alert.present();
-}
+  
 }

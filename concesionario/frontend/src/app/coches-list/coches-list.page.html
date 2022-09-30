@@ -3,7 +3,7 @@
     
     <ion-buttons>
       <ion-back-button defaultHref="/"></ion-back-button>
-      <ion-title>Listado de Coches </ion-title>
+      <ion-title >Listado de Coches </ion-title>
     </ion-buttons>
 
   </ion-toolbar>
@@ -21,16 +21,16 @@
         <ion-card>
           <ion-card-header>
 
-            <ion-card-title>Marca: {{c.marca}}</ion-card-title>
-            <ion-card-subtitle>Modelo: {{c.modelo}}</ion-card-subtitle>
-            <p>Matricula: {{c.matricula}}</p>
+            <ion-card-title> <ion-text class="marca">Marca:</ion-text> {{c.marca}}</ion-card-title>
+            <ion-card-subtitle><ion-text class="modelo">Modelo:</ion-text> {{c.modelo}}</ion-card-subtitle>
+            <p><ion-text class="matricula">Matricula:</ion-text> {{c.matricula}}</p>
 
           </ion-card-header>
           <ion-card-content>
 
-            <ion-button [routerLink]="['/coches-update',c]">Actualiza</ion-button>
+            <ion-button color="medium" [routerLink]="['/coches-update',c]"><ion-icon name="create" style="zoom:1.5"></ion-icon></ion-button>
 
-            <ion-button clear (click)="removeCoche(c)">
+            <ion-button color="danger" clear (click)="removeCoche(c)">
               <ion-icon name="trash" style="zoom:1.5"></ion-icon>
               </ion-button>
           </ion-card-content>

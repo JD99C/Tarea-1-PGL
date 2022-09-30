@@ -78,17 +78,17 @@ exports.update = (req, res) =>{
     .then(num => {
       if (num == 1) {
         res.send({
-          message: "Tutorial was updated successfully."
+          message: "Dato actualizado!"
         });
       } else {
         res.send({
-          message: `Cannot update Tutorial with id=${id}. Maybe Tutorial was not found or req.body is empty!`
+          message: `No se puede actualizar el dato con id=${id}. El dato no se ha podido encontrar o req.body esta vacio.`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error updating Tutorial with id=" + id
+        message: "Error al actualizar el dato con id=" + id
       });
     });
 };
