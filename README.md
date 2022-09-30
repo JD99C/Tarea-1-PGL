@@ -82,8 +82,6 @@ Con esto ya nos abriría el proyecto en nuestro navegador y podremos probarlo
 
 ## Ejecutando las pruebas ⚙️
 
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
 Una vez que nuestra base de datos este lista y el proyecto abierto en nuestro navegador, ya podemos usarlo para ver como funciona:
 
 Lo primero que ponemos ver es la ventana principal y si nos fijamos en la parte inferior vemos tres botones. 
