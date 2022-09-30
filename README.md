@@ -117,7 +117,7 @@ _Herramientas usadas en el proyecto:_
 
 _Mención a todos aquellos que ayudaron a levantar el proyecto:_
 
-* **Yo - Juan de Dios** - *Trabajo Inicial* 
+* **Yo - Juan de Dios** - *Todo el proyecto* 
 * **Profesor - Tiburcio** - *Documentación en PDf para poder hacer el proyecto*
 
 ## Licencia 📄
