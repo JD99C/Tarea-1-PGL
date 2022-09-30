@@ -2,7 +2,7 @@
 
 Este proyecto es una pequeña aplicación de un concesionario con el objetivo de poner en practica lo aprendido en las clases.
 Siguiendo los pasos de los PDF se ha creado el backend y frontend de la aplicación. 
-En el backend solo esta implementado los métodos GET, POST y DELETE. El método UPDATE no esta implementado debido a que se ha encontrado muchas complicaciones para poder insertarlo correctamente, pero a parte de esto, todo lo demás funciona correctamente.
+Este proyecto es algo muy sencillo ya que su objetivo era practicar para aprender a usar las funciones del backend GET, POST, DELETE y UPDATE.
 
 ## Comenzando 🏎
 
@@ -83,6 +83,22 @@ Con esto ya nos abriría el proyecto en nuestro navegador y podremos probarlo
 ## Ejecutando las pruebas ⚙️
 
 _Explica como ejecutar las pruebas automatizadas para este sistema_
+
+Una vez que nuestra base de datos este lista y el proyecto abierto en nuestro navegador, ya podemos usarlo para ver como funciona:
+
+Lo primero que ponemos ver es la ventana principal y si nos fijamos en la parte inferior vemos tres botones. 
+
+Primero pincharemos en el botón que pone "Añadir Coches" ahí podemos escribir los datos del coche que queremos introducir y una vez que le demos al botón "Insertar" nos llevara al listado de coches y podremos ver nuestro coche insertado en la lista. 
+
+Ahora si vamos a la aplicación "MySQL Workbench", entramos en la base de datos y refrescamos los datos podemos ver que nuestro coche se ha insertado correctamente.
+
+Si volvemos a la aplicación del concesionario en la lista se puede ver 2 botones uno para eliminar y otro para actualizar datos.
+
+Si pinchamos en el de actualizar datos veremos que nos llevara a otra ventana con un formulario con los datos del coche que elegimos, ahí podemos cambiar los datos y poner los que queramos y una vez terminamos de cambiar los datos pinchamos en el botón "Actualizar", el programa nos llevara a la lista y veremos que los datos del coche que elegimos ha cambiado.
+
+Si volvemos a la aplicación "MySQL Workbench" y refrescamos los datos de nuestra base de datos veremos que han cambiado.
+
+Por ultimo, en la lista de coches, si pulsamos en el botón eliminar veremos que se eliminara nuestro coche, y si volvemos a la base de datos y refrescamos datos se eliminara también.
 
 ### Analice las pruebas end-to-end 🔩
 
