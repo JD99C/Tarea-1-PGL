@@ -28,9 +28,11 @@
           </ion-card-header>
           <ion-card-content>
 
-            <button ion-button clear (click)="removeCoche(c)">
+            <ion-button [routerLink]="['/coches-update',c]">Actualiza</ion-button>
+
+            <ion-button clear (click)="removeCoche(c)">
               <ion-icon name="trash" style="zoom:1.5"></ion-icon>
-              </button>
+              </ion-button>
           </ion-card-content>
         </ion-card> 
     </ion-label>    

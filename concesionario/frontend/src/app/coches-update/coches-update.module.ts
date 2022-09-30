@@ -4,18 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CochesListPageRoutingModule } from './coches-list-routing.module';
+import { CochesUpdatePageRoutingModule } from './coches-update-routing.module';
 
-import { CochesListPage } from './coches-list.page';
+import { CochesUpdatePage } from './coches-update.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CochesListPageRoutingModule,
+    CochesUpdatePageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [CochesListPage]
+  declarations: [CochesUpdatePage]
 })
-export class CochesListPageModule {}
+export class CochesUpdatePageModule {}

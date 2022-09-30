@@ -2,7 +2,7 @@ import { Component, NgZone, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http'; 
-import { Coche, CocheService } from '../services/coche.service';
+import { CocheService } from '../services/coche.service';
 import { ToastController } from '@ionic/angular';
 
 @Component({

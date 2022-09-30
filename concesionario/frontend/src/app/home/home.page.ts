@@ -9,7 +9,7 @@ import { AlertController, MenuController } from '@ionic/angular';
 })
 export class HomePage {
 
-  constructor(private router: Router, public alertController: AlertController) {}
+  constructor(private router: Router, private alertController: AlertController) {}
 
   gotoCoches(){
     this.router.navigateByUrl("/coches-list")
@@ -26,17 +26,11 @@ export class HomePage {
 async presentAlert() {
   const alert = await this.alertController.create({
     header: 'Alert',
-    subHeader: 'Subtitle',
-    message: 'This is an alert message.',
-    buttons: ['OK']
+    subHeader: 'Important message',
+    message: 'This is an alert!',
+    buttons: ['OK'],
   });
 
   await alert.present();
 }
-
-
-
-
-
-
 }
