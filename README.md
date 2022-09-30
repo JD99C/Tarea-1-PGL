@@ -98,7 +98,7 @@ Si volvemos a la aplicación "MySQL Workbench" y refrescamos los datos de nuestr
 
 Por ultimo, en la lista de coches, si pulsamos en el botón eliminar veremos que se eliminara nuestro coche, y si volvemos a la base de datos y refrescamos datos se eliminara también.
 
-### Enlace a POSTMAN con los accesos a los end-points 🔌
+## Enlace a POSTMAN con los accesos a los end-points 🔌
 
 https://documenter.getpostman.com/view/23450722/2s83tCLDgj
 
